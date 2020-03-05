@@ -1,8 +1,7 @@
 'use strict';
 
 const express = require('express');
-const path = require('path');
-const router = express.Router();
+var routes = require('./routes');
 
 // Constants
 const PORT = 80;
@@ -11,12 +10,8 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 
-router.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname + '/html/index.html'));
-});
-
-app.use('/', router);
 app.use('/build', express.static('html/build'));
+app.use('*', routes);
 
 app.listen(PORT, HOST);
 
