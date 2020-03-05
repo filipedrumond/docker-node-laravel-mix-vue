@@ -11,6 +11,8 @@ const HOST = '0.0.0.0';
 const app = express();
 
 app.use('/build', express.static('html/build'));
+
+/* NO ROUTES HERE TRATAMENTO PARA O VUE GERENCIAR MAS CUIDADO FUTURO PARA CASO DE POSTS OU TRATAMENTO DE FOTOS ETC */
 app.use('*', routes);
 
 app.listen(PORT, HOST);
