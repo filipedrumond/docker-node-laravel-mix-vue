@@ -1,0 +1,13 @@
+version: '3'
+services:
+    node_docker:
+      build: 
+          context: .
+          dockerfile: Dockerfile
+      container_name: node_docker
+      ports:
+          - "505:80"
+      volumes:
+          - .:/usr/src/app/
+      environment:
+          - APPLICATION_ENV=development

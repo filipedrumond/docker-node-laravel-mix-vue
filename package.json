@@ -1,0 +1,28 @@
+{
+  "name": "docker_web_app",
+  "version": "1.0.0",
+  "description": "Node.js on Docker",
+  "author": "First Last <first.last@example.com>",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "npm run development",
+    "development": "node node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run development -- --watch",
+    "watch-poll": "npm run watch -- --watch-poll",
+    "hot": "node node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "dependencies": {
+    "css-loader": "^3.2.0",
+    "express": "^4.16.1",
+    "laravel-mix": "^5.0.1"
+  },
+  "devDependencies": {
+    "resolve-url-loader": "^3.1.0",
+    "sass": "^1.26.2",
+    "sass-loader": "^8.0.2",
+    "vue-template-compiler": "^2.6.11"
+  }
+}
